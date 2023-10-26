@@ -23,7 +23,7 @@ public class EmailJavaxUtil {
     // 发件人邮箱地址
     private static final String senderEmail = "2863039606@qq.com";
     // smtp邮箱授权码
-    private static final String senderPassword = "";
+    private static final String senderPassword = "qwgwftakojijdhae";
     // 端口
     private static final String senderSmtpPort = "465";
 

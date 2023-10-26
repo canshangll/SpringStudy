@@ -4,7 +4,7 @@ spring:
     mail:
       host: smtp.qq.com
       username: 2863039606@qq.com
-      password: # 授权码
+      password: qwgwftakojijdhae  # 授权码
       default-encoding: UTF-8
       properties.mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
       # 打印邮件发送过程，生产环境关闭
@@ -18,5 +18,5 @@ email:
     host: smtp.qq.com
     email: 2863039606@qq.com
     name: 邮件提醒系统
-    password: # 授权码
+    password: qwgwftakojijdhae  # 授权码
     port: 25

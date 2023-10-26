@@ -9,6 +9,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import javax.activation.FileDataSource;
+import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
@@ -19,9 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 public class EmailSpringUtil {
 
-    private final JavaMailSender javaMailSender;
-    private final MailProperties mailProperties;
-
+//    private final JavaMailSender javaMailSender;
+//    private final MailProperties mailProperties;
 
     /**
      * 邮件发送
@@ -37,27 +37,28 @@ public class EmailSpringUtil {
      * @throws UnsupportedEncodingException
      * @throws MessagingException
      */
-    public void sendEmail(String subject, String content,boolean contentIsHtml, String fromMailPersonalName,
-                                  String toMail, String ccMail, String bccMail, List<String> fileNames) throws MessagingException, UnsupportedEncodingException {
-        MimeMessage message = javaMailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message,true);
-        helper.setFrom(mailProperties.getUsername(),fromMailPersonalName);
-        helper.setTo(toMail);
-        if(!ObjectUtils.isEmpty(ccMail)){
-            helper.setCc(ccMail);
-        }
-        if(!ObjectUtils.isEmpty(bccMail)){
-            helper.setBcc(bccMail);
-        }
-        helper.setSubject(subject);
-        helper.setText(content,contentIsHtml);
-        // 设置附件（注意这里的fileName必须是服务器本地文件名，不能是远程文件链接）
-        if(!CollectionUtils.isEmpty(fileNames)){
-            for (String fileName : fileNames) {
-                FileDataSource fileDataSource = new FileDataSource(fileName);
-                helper.addAttachment(fileDataSource.getName(),fileDataSource);
-            }
-        }
-        javaMailSender.send(message);
-    }
+//    public void sendEmail(String subject, String content,boolean contentIsHtml, String fromMailPersonalName,
+//                                  String toMail, String ccMail, String bccMail, List<String> fileNames) throws MessagingException, UnsupportedEncodingException {
+//        MimeMessage message = javaMailSender.createMimeMessage();
+//        MimeMessageHelper helper = new MimeMessageHelper(message,true);
+//        helper.setFrom(mailProperties.getUsername(),fromMailPersonalName);
+//        helper.setTo(toMail);
+//        if(!ObjectUtils.isEmpty(ccMail)){
+//            helper.setCc(ccMail);
+//        }
+//        if(!ObjectUtils.isEmpty(bccMail)){
+//            helper.setBcc(bccMail);
+//        }
+//        helper.setSubject(subject);
+//        helper.setText(content,contentIsHtml);
+//        // 设置附件（注意这里的fileName必须是服务器本地文件名，不能是远程文件链接）
+//        if(!CollectionUtils.isEmpty(fileNames)){
+//            for (String fileName : fileNames) {
+//                FileDataSource fileDataSource = new FileDataSource(fileName);
+//                helper.addAttachment(fileDataSource.getName(),fileDataSource);
+//            }
+//        }
+//        javaMailSender.send(message);
+//    }
+//
 }

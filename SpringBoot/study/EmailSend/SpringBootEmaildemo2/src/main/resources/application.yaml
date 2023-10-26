@@ -1,0 +1,43 @@
+server:
+  port: 9000
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: cloudmin286@gmail.com
+    password: 13422849999l...
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 350238887983-mq1fkug7vg2jghiuvfb09iapjdggi8rl.apps.googleusercontent.com
+            client-secret: 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
+            scope: profile,email
+            redirect-uri: "http://localhost:9000/login/oauth2/code/{registrationId}"
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v1/certs
+#gmail:
+#  smtp:
+#    debug: true
+#    enableSsl: true
+#    host: smtp.gmail.com
+#    name: gmail
+#    password: 13422849999l...
+#    port: 587
+#    username: cloudmin286@gmail.com
+
+gmail:
+  clientId: 350238887983-mq1fkug7vg2jghiuvfb09iapjdggi8rl.apps.googleusercontent.com
+  clientSecret: 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
+  refreshToken: https://oauth2.googleapis.com/token
+  username: cloudmin286@gmail.com
